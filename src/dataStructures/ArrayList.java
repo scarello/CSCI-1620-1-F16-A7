@@ -17,14 +17,7 @@
 // Comparable<E>.
 
 package dataStructures;
-import java.util.Scanner;
-import employeeType.subTypes.HourlyEmployee;
-import employeeType.subTypes.SalaryEmployee;
-import employeeType.subTypes.CommissionEmployee;
-import employeeType.employee.Employee;
 import exceptions.InvalidSizeException;
-import exceptions.InvalidCharacterException;
-import java.util.InputMismatchException;
 import exceptions.MaximumCapacityException;
 
 

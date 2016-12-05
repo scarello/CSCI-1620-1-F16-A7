@@ -20,7 +20,6 @@
 
 package employeeType.employee;
 import exceptions.InvalidEmployeeNumberException;
-import java.util.Scanner;
 import java.io.Serializable;
 
 public abstract class Employee implements Comparable<Employee>, Serializable{

@@ -32,7 +32,6 @@ import java.util.Scanner;
 import dataStructures.ArrayList;
 import dataStructures.LinkedList;
 import dataStructures.Queue;
-import dataStructures.ListNode;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -61,10 +60,10 @@ public class EmployeeManager {
     //Description     :Constructor, creates the Employee array, sets currentEmployees to 0.
 
     public EmployeeManager() {
-        hourlyList = new LinkedList<Employee>("Hourly List");
-        salaryList = new LinkedList<Employee>("Salary List");
-        commissionList = new LinkedList<Employee>("Commission List");
-        vacationRequests = new Queue<Employee>("Vacation Requests");
+        hourlyList = new LinkedList<>("Hourly List");
+        salaryList = new LinkedList<>("Salary List");
+        commissionList = new LinkedList<>("Commission List");
+        vacationRequests = new Queue<>("Vacation Requests");
 
         try
         {
@@ -153,11 +152,7 @@ public class EmployeeManager {
 
     public void removeEmployee(int index)
     {
-        if(employees.isEmpty())
-        {
-            return;
-        }
-        else
+        if(!employees.isEmpty())
         {
             Employee temp = employees.removeItem(index);
             if(temp instanceof HourlyEmployee)
@@ -177,15 +172,15 @@ public class EmployeeManager {
     //Description     :Lists all the current Employees. Outputs there are none if there are none.
 
 
-    public void listAll()
+    public String listAll()
     {
-        if (employees.lengthIs() == 0)
+        if (employees.isEmpty())
         {
-            System.out.println("No Employees.\n");
+            return "No Employees.";
         }    
         else
         {
-            System.out.println("\n" + employees.toString() ); 
+            return employees.toString(); 
         }
     }
 
@@ -195,18 +190,15 @@ public class EmployeeManager {
     //Partners        :None
     //Description     :Lists all the current HourlyEmployees. Outputs there are none if there are none.
 
-    public void listHourly()
+    public String listHourly()
     {
-        if (hourlyList.lengthIs() == 0)
+        if (hourlyList.isEmpty())
         {    
-            System.out.println("No Employees.\n");
+            return "No Employees.";
         }
         else
         {
-            for(int i = 0; i < hourlyList.lengthIs(); i++)
-            {
-                System.out.println(hourlyList.getItem(i).toString());
-            }
+            return hourlyList.toString();
         }
     }
 
@@ -217,17 +209,15 @@ public class EmployeeManager {
     //Partners        :None
     //Description     :Lists all the current SalaryEmployees. Outputs there are none if there are none.
 
-    public void listSalary()
+    public String listSalary()
     {
-        if (salaryList.lengthIs() == 0)
+        if (salaryList.isEmpty())
         {    
-            System.out.println("No Employees.\n");
+            return "No Employees.";
         }
         else
         {
-            for(int i = 0; i < salaryList.lengthIs(); i++){
-                System.out.println(salaryList.getItem(i).toString());
-            }
+            return salaryList.toString();
         }
     }   
 
@@ -242,21 +232,16 @@ public class EmployeeManager {
 
 
 
-    public void listCommission()
+    public String listCommission()
     {
-        if (commissionList.lengthIs() == 0)
+        if (commissionList.isEmpty())
         {    
-            System.out.println("No Employees.\n");
+            return "No Employees.";
         }
         else
         {
-            for(int i = 0; i < commissionList.lengthIs(); i++)
-            {
-                System.out.println(commissionList.getItem(i).toString());
-            }
-
+          return commissionList.toString();
         }
-
     }
 
     //Method Name     :resetWeek
@@ -337,16 +322,20 @@ public class EmployeeManager {
     //Partners        :None
     //Description     :Increase the hours worked of the Employee at the given index by the given double amount.
 
-    public void increaseHours(int index, double amount){
+    public boolean increaseHours(int index, double amount){
 
         Employee employee = employees.getItem(index);
         if(employee instanceof HourlyEmployee)
         {
             HourlyEmployee Employee = (HourlyEmployee)employee;
             Employee.increaseHours(amount);
+            return true;
         }
         else 
-            System.out.println("\nThis is not an Hourly Employee!\n");
+        {
+            //System.out.println("\nThis is not an Hourly Employee!\n");
+            return false;
+        }
     }
 
     //Method Name     :increaseSales
@@ -355,16 +344,20 @@ public class EmployeeManager {
     //Partners        :None
     //Description     :Increase the sales of the Employee at the given index by the given double amount.
 
-    public void increaseSales(int index, double amount){
+    public boolean increaseSales(int index, double amount){
 
         Employee employee = employees.getItem(index);
         if(employee instanceof CommissionEmployee)
         {
             CommissionEmployee Employee = (CommissionEmployee)employee;
             Employee.increaseSales(amount);
+            return true;
         }
         else
-            System.out.println("\nThis is not a Commission Employee!\n");
+        {
+            //System.out.println("\nThis is not a Commission Employee!\n");
+            return false;
+        }
     }
 
     //Method Name     :findAllBySubstring
@@ -659,12 +652,12 @@ public class EmployeeManager {
     //Description     :If requests are present outputs all of the Employees in the Queue. 
     //                  If there are no requests outputs, No vacation requests.
 
-    public void outputRequests()
+    public String outputRequests()
     {
         if(vacationRequests.isEmpty())
-            System.out.println("No vacation requests");
+            return "No vacation requests";
         else 
-            System.out.println(vacationRequests.toString());
+            return vacationRequests.toString();
 
     }
     //Method Name     :loadEmployees
@@ -697,7 +690,7 @@ public class EmployeeManager {
         }
         catch(IOException IOE)
         {
-            System.err.println("Error Opening Employee File.");
+            //System.err.println("Error Opening Employee File.");
             //System.out.println(IOE.toString());
             return false;
         }
