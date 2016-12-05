@@ -10,6 +10,7 @@ package csci.pkg1620.pkg1.f16.a7;
  * @author mikem
  */
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -87,14 +88,18 @@ public class EmployeeFrame extends JFrame
                 String[] typeArray = { "Hourly", "Salary", "Commission" };
                 employeeTypeCombo = new JComboBox(typeArray);
                 addPanel.add(employeeTypeCombo);
-                employeeNumberField = new JTextField();
+                employeeNumberField = new JTextField("", 5);
                 employeeNumberField.setSize(5,employeeNumberField.getHeight());
                 String employeeNumberFieldHintText = "Emp #";
                 employeeNumberField.setText(employeeNumberFieldHintText);
                 employeeNumberField.setForeground(Color.LIGHT_GRAY);
                 addPanel.add(employeeNumberField);
-                firstField = new JTextField();
-                firstField.setSize(15, firstField.getHeight());
+                firstField = new JTextField("",20);
+                
+                //firstField.setSize(new Dimension(WIDTH, firstField.getSize().getHeight()));
+                firstField.setSize(50, 50);
+                
+                //firstField.getHeight()
                 String firstFieldDefaultText = "First";
                 firstField.setText(firstFieldDefaultText);
                 firstField.setForeground(Color.LIGHT_GRAY);
