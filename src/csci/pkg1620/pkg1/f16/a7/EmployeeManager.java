@@ -591,10 +591,14 @@ public class EmployeeManager {
 
     public void sort()
     {
-        employees.sort();
-        hourlyList.sort();
-        salaryList.sort();
-        commissionList.sort();
+        if(!employees.isEmpty())
+            employees.sort();
+        if(!hourlyList.isEmpty())
+            hourlyList.sort();
+        if(!salaryList.isEmpty())
+            salaryList.sort();
+        if(!commissionList.isEmpty())
+            commissionList.sort();
     }
 
     //Method Name     :addRequest
@@ -610,6 +614,7 @@ public class EmployeeManager {
         if( i != -1 )
         {
             vacationRequests.enqueue(employees.getItem(i));
+            //System.out.println(vacationRequests.toString());
             return true;
         }
         else
@@ -819,7 +824,9 @@ public class EmployeeManager {
             Employee employeeTmp = vacationRequests.dequeue();
             int empNum = employeeTmp.getEmployeeNumber();
             output2.format("%d", empNum);
+            //System.out.println(empNum);
         }
+        output2.flush();
         output2.close();
 
         return !error;
