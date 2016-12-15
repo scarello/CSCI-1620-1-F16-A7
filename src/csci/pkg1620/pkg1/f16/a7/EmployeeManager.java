@@ -823,7 +823,7 @@ public class EmployeeManager {
         while(!vacationRequests.isEmpty()){
             Employee employeeTmp = vacationRequests.dequeue();
             int empNum = employeeTmp.getEmployeeNumber();
-            output2.format("%d", empNum);
+            output2.format("%d\n", empNum);
             //System.out.println(empNum);
         }
         output2.flush();
