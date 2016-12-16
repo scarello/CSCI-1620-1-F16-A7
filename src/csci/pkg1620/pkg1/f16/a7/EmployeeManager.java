@@ -2,8 +2,8 @@ package csci.pkg1620.pkg1.f16.a7;
 
 // Name     : Michael Monical
 // Class    : 1620-001
-// Program #    : 6
-// Due Date     : Nov. 29, 2016
+// Program #    : 7
+// Due Date     : Dec. 16, 2016
 //
 // Honor Pledge:  On my honor as a student of the University
 //                of Nebraska at Omaha, I have neither given nor received
@@ -79,7 +79,7 @@ public class EmployeeManager {
 
     //Method Name     :addEmployee
     //Parameters      :type:int, fn:String, ln:String, m:char, g:char, en:int, ft:boolean, amount:double
-    //Return Value(s) :None
+    //Return Value(s) :String
     //Partners        :None
     //Description     :Takes an int representing the type of Employee to be added (1 Hourly, 2 Salary, 3 Commission) 
     //                 as well as the required data to create that Employee. If one of these values is not passed output 

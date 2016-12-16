@@ -4,11 +4,23 @@
  * and open the template in the editor.
  */
 package csci.pkg1620.pkg1.f16.a7;
+// Name     : Michael Monical
+// Class    : 1620-001
+// Program #    : 7
+// Due Date     : Dec. 16, 2016
+//
+// Honor Pledge:  On my honor as a student of the University
+//                of Nebraska at Omaha, I have neither given nor received
+//                unauthorized help on this homework assignment.
+//
+// NAME: Michael Monical
+// NUID: 9263
+// EMAIL: mikemonical@gmail.com
 
-/**
- *
- * @author mikem
- */
+// Partners:None
+
+// This is the employee frame which is the GUI
+// 
 import dataStructures.ArrayList;
 import employeeType.employee.Employee;
 import exceptions.InvalidCharacterException;
@@ -82,6 +94,11 @@ public class EmployeeFrame extends JFrame
 	
 	private JTextArea console;
 	
+        //Method Name     :EmployeeFrame
+        //Parameters      :None
+        //Return Value(s) :None
+        //Partners        :None
+        //Description     :employeeFrameLayout
 	public EmployeeFrame()
 	{
 		super("Employee Manager");
@@ -320,7 +337,12 @@ public class EmployeeFrame extends JFrame
 		
 		return ret;
 	}
-	
+    //Method Name     :ButtonHandler
+    //Parameters      :None
+    //Return Value(s) :Class
+    //Partners        :None
+    //Description     :inner class for action listener.
+        
 	//inner class for ActionListener
 	private class ButtonHandler implements ActionListener
 	{

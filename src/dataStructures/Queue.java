@@ -1,7 +1,7 @@
 // Name     : Michael Monical
 // Class    : 1620-001
-// Program #    : 6 
-// Due Date     : Nov. 29, 2016 
+// Program #    : 7 
+// Due Date     : DEC. 16, 2016 
 //
 // Honor Pledge:  On my honor as a student of the University
 //                of Nebraska at Omaha, I have neither given nor received
