@@ -89,17 +89,17 @@ public class EmployeeManager {
     //                 the line, "Cannot add more Employees".
 
 
-    public void addEmployee(int type, String fn, String ln, char m, char g, int en, boolean ft, double amount)throws InvalidEmployeeNumberException{
+    public String addEmployee(int type, String fn, String ln, char m, char g, int en, boolean ft, double amount)throws InvalidEmployeeNumberException{
         if (employees.lengthIs() == employeeMax)
         {
-            System.out.println("Cannot add more Employees");
-            return;
+            return "Cannot add more Employees";
+
         }
         for(int i = 0;i < employees.lengthIs();i++){
             if(en == employees.getItem(i).getEmployeeNumber())
             {
-                System.out.println("Duplicate Not Added");
-                return;
+                return "Duplicate Not Added";
+                
             }
 
         } 
@@ -122,7 +122,7 @@ public class EmployeeManager {
                 }
                 catch(MaximumCapacityException E)
                 {
-                    System.out.println("At maximum capacity cannot add the employee");
+                    return "At maximum capacity cannot add the employee";
                 }
                 commissionList.insertAtBack(ce);
                 break;
@@ -134,14 +134,15 @@ public class EmployeeManager {
                 }
                 catch(MaximumCapacityException E)
                 {
-                    System.out.println("At maximum capacity cannot add the employee");
+                    return "At maximum capacity cannot add the employee";
                 }
                 salaryList.insertAtBack(se);
                 break;
             default:
-                System.out.println("Invalid Employee Type, None Added");
-                break;
+                return "Invalid Employee Type, None Added";
+                
         }
+        return "Employee Added";
     }
 
     //Method Name     :removeEmployee

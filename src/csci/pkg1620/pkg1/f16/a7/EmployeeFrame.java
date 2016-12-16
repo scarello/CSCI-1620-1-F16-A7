@@ -366,8 +366,8 @@ public class EmployeeFrame extends JFrame
                             }
      
                             try{
-                                em.addEmployee(employeeType + 1, fn, ln, g, g, empNum, ft, amount);
-                                console.setText("Employee Added");
+                                
+                                console.setText(em.addEmployee(employeeType + 1, fn, ln, g, g, empNum, ft, amount));
                             }catch(InvalidEmployeeNumberException E){
                                 console.setText("Invalid Employee Number Please Re-enter A New One");
                             
